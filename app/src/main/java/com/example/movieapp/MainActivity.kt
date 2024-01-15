@@ -31,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
-
+        recyclerView.adapter=adapter.withLoadStateHeaderAndFooter(
+            header = LoadingAdapter(),
+            footer = LoadingAdapter()
+        )
         observeData()
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
