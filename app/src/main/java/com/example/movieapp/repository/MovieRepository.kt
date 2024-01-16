@@ -9,7 +9,7 @@ import javax.inject.Inject
 class MovieRepository @Inject constructor(private val pagingSource: MoviePagingSource) {
 
     fun getMovieList() = Pager(
-        config = PagingConfig(pageSize = 1, maxSize = 100),
+        config = PagingConfig(pageSize = 20, maxSize = 100),
         pagingSourceFactory = { pagingSource }
     ).liveData
 
